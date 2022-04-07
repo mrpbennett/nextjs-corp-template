@@ -6,24 +6,6 @@ import {HiX} from 'react-icons/hi'
 import LogoDark from '../images/logo-dark.png'
 import LogoLight from '../images/logo-light.png'
 
-const routes = [
-  {
-    name: 'home',
-    path: '/',
-    color: 'text-dracula-red',
-  },
-  {
-    name: 'projects',
-    path: '/projects',
-    color: 'text-dracula-cyan',
-  },
-  {
-    name: 'posts',
-    path: '/blog',
-    color: 'text-dracula-green',
-  },
-]
-
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)

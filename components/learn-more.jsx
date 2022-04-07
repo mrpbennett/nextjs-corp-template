@@ -1,7 +1,12 @@
 import {motion} from 'framer-motion'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 import React, {useState} from 'react'
 import {HiArrowRight} from 'react-icons/hi'
+
+LearnMore.propTypes = {
+  href: PropTypes.string.isRequired,
+}
 
 export default function LearnMore({href}) {
   const [hover, setHover] = useState(false)

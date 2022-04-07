@@ -1,3 +1,4 @@
+import React from 'react'
 import LearnMore from '../components/learn-more'
 import Charity from '../components/sections/charity'
 import Logos from '../components/sections/logos'
