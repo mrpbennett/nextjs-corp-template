@@ -67,7 +67,10 @@ export default function Home() {
 
 Home.getLayout = function getLayout(page) {
   return (
-    <LayoutMain title="A global leader in impact intelligence">
+    <LayoutMain
+      title="Main"
+      bgImageUrl="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2874&q=80"
+    >
       {page}
     </LayoutMain>
   )

@@ -40,15 +40,15 @@ export default function Navigation() {
         }`}
       >
         <div
-          className={`flex items-center justify-between container ${
+          className={`flex items-center justify-between px-4 md:container ${
             isScrolling ? 'py-4' : 'py-6'
           }`}
         >
           <div>
             <Link href="/" passHref>
               <div
-                className={`relative w-40  hover:cursor-pointer ${
-                  isScrolling ? 'h-8' : 'h-12'
+                className={`relative   ${
+                  isScrolling ? 'h-8 w-32' : ' h-8 w-20 md:h-12 md:w-40 '
                 }`}
               >
                 <Image
@@ -56,6 +56,7 @@ export default function Navigation() {
                   alt="PNFB logo"
                   layout="fill"
                   objectFit="contain"
+                  className="hover:cursor-pointer"
                 />
               </div>
             </Link>
@@ -65,7 +66,9 @@ export default function Navigation() {
               {!isOpen ? (
                 <motion.span
                   className={`font-bold  ${
-                    isScrolling ? 'text-black text-base' : 'text-white text-xl'
+                    isScrolling
+                      ? 'text-black text-base'
+                      : 'text-white text-base md:text-xl'
                   }`}
                 >
                   Menu
@@ -88,30 +91,36 @@ export default function Navigation() {
                 stiffness: 500,
                 damping: 50,
               }}
-              className="fixed top-0 right-0 z-50 h-[50vh] w-full bg-[#111] py-10 text-white shadow-lg rounded-bl-[122px]"
+              className="fixed top-0 right-0 z-50 h-fit w-full bg-white  p-6 md:p-16 text-white shadow-lg rounded-bl-[122px]"
             >
               <div className="container">
                 <div className="flex items-center justify-between">
-                  <div className="relative w-48 h-20">
-                    <Image
-                      src={isOpen ? LogoLight : null}
-                      alt="PNFB logo"
-                      layout="fill"
-                      objectFit="contain"
-                    />
+                  <div
+                    className="relative w-24 md:w-48 h-12 md:h-20"
+                    onClick={closeMenu}
+                  >
+                    <Link href="/" passHref>
+                      <Image
+                        src={isOpen ? LogoDark : null}
+                        alt="PNFB logo"
+                        layout="fill"
+                        objectFit="contain"
+                        className="hover:cursor-pointer"
+                      />
+                    </Link>
                   </div>
                   <motion.div
                     whileHover={{rotate: 360}}
                     onClick={closeMenu}
-                    className="flex items-center justify-center h-10 w-10 rounded-full bg-white hover:cursor-pointer"
+                    className="flex items-center justify-center h-10 w-10 rounded-full bg-accent-green hover:cursor-pointer"
                   >
-                    <HiX className="h-6 w-6 text-black" />
+                    <HiX className="h-6 w-6 text-white" />
                   </motion.div>
                 </div>
 
                 <div className="grid grid-cols-12 gap-10 prose prose-xl mt-6">
-                  <div className="text-white col-span-4 text-base">
-                    <h2 className="text-white font-playfair">About us</h2>
+                  <div className="text-black col-span-4 text-base hidden lg:block">
+                    <h2 className="font-playfair">About us</h2>
                     <p>
                       We connect sustainable capital allocation to real world
                       economies by breaking down market barriers.
@@ -119,9 +128,10 @@ export default function Navigation() {
                   </div>
 
                   <div className="auto-cols-max">
-                    <h2 className="font-playfair text-white whitespace-nowrap">
-                      ...
-                    </h2>
+                    <h2 className="font-playfair whitespace-nowrap">...</h2>
+                    <Link href="/meet-the-team" passHref>
+                      <a onClick={closeMenu}>meet the team </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -138,7 +148,7 @@ export default function Navigation() {
               }}
               transition={{type: 'spring', bounce: 0, duration: 0.2}}
               onClick={closeMenu}
-              className="fixed top-0 left-0 z-40 flex h-full w-full items-center justify-center bg-black/30 px-5"
+              className="fixed top-0 left-0 z-40 flex h-full w-full items-center justify-center bg-black/50 px-5"
             />
           </>
         ) : null}

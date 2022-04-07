@@ -15,6 +15,9 @@ module.exports = {
         playfair: ['PLayfair Display', ...defaultTheme.fontFamily.serif],
         dmsans: ['DM Sans', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        'accent-green': '#20E58F',
+      },
       typography: {
         DEFAULT: {
           css: {

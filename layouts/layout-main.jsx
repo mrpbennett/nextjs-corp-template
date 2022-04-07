@@ -7,9 +7,16 @@ const Navigation = dynamic(() => import('../components/navigation'), {
   ssr: false,
 })
 
-export default function LayoutMain({title, children}) {
+export default function LayoutMain({title, children, bgImageUrl = ''}) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div
+      className="flex flex-col min-h-screen"
+      style={{
+        backgroundImage: `url(${bgImageUrl})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundCover: 'cover',
+      }}
+    >
       <Head>
         <title>{title} &bull; PNFB</title>
         <link rel="icon" href="/bighead.png" />

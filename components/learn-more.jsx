@@ -27,7 +27,7 @@ export default function LearnMore({href}) {
           ) : (
             <HiArrowRight className="h-5 w-5 absolute z-40 text-white" />
           )}
-          <div className="h-12 w-12 rounded-full bg-[#20E58F] absolute z-10 left-0" />
+          <div className="h-12 w-12 rounded-full bg-accent-green absolute z-10 left-0" />
         </motion.a>
       </Link>
     </>
