@@ -9,12 +9,7 @@ export default function Logos() {
       <div className="flex items-center justify-around mt-20 flex-wrap">
         {logos.map(logo => (
           <div key={logo.name} className="relative w-[162px] h-[75px]">
-            <Image
-              src={logo.url}
-              alt={logo.name}
-              layout="fill"
-              optionFill="contain"
-            />
+            <Image src={logo.url} alt={logo.name} layout="fill" />
           </div>
         ))}
       </div>

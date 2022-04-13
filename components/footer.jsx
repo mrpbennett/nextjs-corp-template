@@ -12,7 +12,7 @@ const routes = [
   },
   {
     name: 'Cookie policy',
-    path: '/',
+    path: '/cookie-policy',
   },
 ]
 
@@ -21,20 +21,49 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white relative z-40">
-      <div className=" py-12 text-white border-t border-gray-100/30">
-        <div className="container flex items-center justify-between">
-          <div className="text-sm">
-            Copyright © {currentYear} PNFB.
-            <br /> All Rights Reserved
+      <div className=" py-12 text-zinc-100 border-t border-gray-100/30">
+        <div className="container flex justify-between px-6 md:px-0">
+          <div className="flex flex-col md:flex-row">
+            <div className="mb-16 md:mr-16 font-dmsans ">
+              <strong>Head Office</strong>
+              <br />
+              41 Great Pulteney Street
+              <br />
+              London, W1F 9NZ
+              <br />
+              United Kingdom
+            </div>
+            <div>
+              <strong>Contact Details</strong>
+              <br />
+              <a
+                href="mailto:info@prco.com"
+                className="font-dmsans hover:underline hover:decoration-accent-green hover:decoration-2"
+              >
+                info@prco.com
+              </a>
+              <br />
+              <a
+                href="mailto:enquiries@prco.com"
+                className="font-dmsans hover:underline hover:decoration-accent-green hover:decoration-2"
+              >
+                enquiries@prco.com
+              </a>
+            </div>
           </div>
 
-          <div className="space-x-20 text-xl">
+          <nav className="space-y-2 flex flex-col text-right">
             {routes.map(route => (
               <Link href={route.path} key={route.name} passHref>
-                <a>{route.name}</a>
+                <a className="hover:underline hover:decoration-accent-green hover:decoration-2 font-dmsans">
+                  {route.name}
+                </a>
               </Link>
             ))}
-          </div>
+          </nav>
+        </div>
+        <div className="container font-dmsans mt-20 px-6 md:px-0">
+          Copyright © {currentYear} PNFB. All Rights Reserved
         </div>
       </div>
     </footer>

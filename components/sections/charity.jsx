@@ -3,8 +3,8 @@ import LearnMore from '../learn-more'
 
 export default function Charity() {
   return (
-    <div className="py-36 bg-white text-3xl">
-      <div className="container prose prose-xl">
+    <div className="py-16 md:py-36 bg-white text-3xl">
+      <div className="container prose md:prose-xl px-6 md:px-0">
         <h2 className="text-black font-playfair">Our charity</h2>
         <p className="text-black font-dmsans">
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -17,7 +17,7 @@ export default function Charity() {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-        <LearnMore />
+        <LearnMore href="/" />
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 import {AnimatePresence, motion} from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 import React, {useState} from 'react'
 import {HiX} from 'react-icons/hi'
 import LogoDark from '../images/logo-dark.png'
@@ -9,6 +10,8 @@ import LogoLight from '../images/logo-light.png'
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
+
+  const router = useRouter()
 
   function openMenu() {
     setIsOpen(true)
@@ -52,7 +55,13 @@ export default function Navigation() {
                 }`}
               >
                 <Image
-                  src={isScrolling ? LogoDark : LogoLight}
+                  src={
+                    isScrolling ||
+                    router.pathname === 'privacy-policy' ||
+                    router.pathname === 'cookie-policy'
+                      ? LogoDark
+                      : LogoLight
+                  }
                   alt="PNFB logo"
                   layout="fill"
                   objectFit="contain"
@@ -66,7 +75,9 @@ export default function Navigation() {
               {!isOpen ? (
                 <motion.span
                   className={`font-bold  ${
-                    isScrolling
+                    isScrolling ||
+                    router.pathname === 'privacy-policy' ||
+                    router.pathname === 'cookie-policy'
                       ? 'text-black text-base'
                       : 'text-white text-base md:text-xl'
                   }`}
